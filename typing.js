@@ -1,4 +1,5 @@
 function Typing (opts) {
+  this.version = '0.9';
   this.source = opts.source;
   this.output = opts.output;
   this.delay = opts.delay || 120;
