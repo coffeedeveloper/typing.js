@@ -15,14 +15,15 @@ Typing.fn = Typing.prototype = {
     this.chain.val = this.convert(this.source, this.chain.val);
   },
   convert: function (dom, arr) {
-    var children = Array.prototype.slice.call(dom.childNodes);
+    var that = this,
+        children = Array.prototype.slice.call(dom.childNodes);
 
     children.forEach(function (node) {
       if (node.nodeType === 3) {
         arr = arr.concat(node.nodeValue.split(''));
       } else if (node.nodeType === 1) {
         var val = [];
-        val = this.convert(node, val);
+        val = that.convert(node, val);
         arr.push({
           'dom': node,
           'val': val
