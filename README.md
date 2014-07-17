@@ -6,7 +6,8 @@
 <script>
   var typing = new Typing({
     source: document.getElementById('source'),
-    output: document.getElementById('output')
+    output: document.getElementById('output'),
+    delay: 80
   });
   typing.start();
 </script>
