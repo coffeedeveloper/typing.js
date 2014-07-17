@@ -56,6 +56,34 @@
   <span class="nx">typing</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
 <span class="nt">&lt;/script&gt;</span>
 </pre></div>
+
+<p>鼠标闪烁效果，暂时只支持内容都是行内元素的内容</p>
+
+<div class="highlight highlight-html"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"source"</span><span class="nt">&gt;</span>
+  这里的呈现效果是有鼠标跟随的！<span class="nt">&lt;br</span> <span class="nt">/&gt;</span>
+  还不错吧？
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"output-wrap"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">"output"</span><span class="nt">&gt;&lt;/span&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"typing-cursor"</span><span class="nt">&gt;</span>|<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+
+<h3>
+<a name="todo" class="anchor" href="#todo"><span class="octicon octicon-link"></span></a>todo</h3>
+
+<ul>
+<li>回退删除效果（1.0版本完成标准）</li>
+<li>块状元素的鼠标闪烁输入效果</li>
+</ul><h3>
+<a name="%E6%8E%A5%E5%8F%A3%E8%AF%B4%E6%98%8E%E5%B0%9A%E6%9C%AA%E5%AE%9E%E7%8E%B0" class="anchor" href="#%E6%8E%A5%E5%8F%A3%E8%AF%B4%E6%98%8E%E5%B0%9A%E6%9C%AA%E5%AE%9E%E7%8E%B0"><span class="octicon octicon-link"></span></a>接口说明（尚未实现）</h3>
+
+<div class="highlight highlight-html"><pre><span class="nt">&lt;div&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">data-type=</span><span class="s">"back"</span><span class="nt">&gt;</span>通过设置元素的data-type="back"来达到回退删除的效果<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;span&gt;</span>上面的文本被删除完毕后才会出现的文本<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;h1</span> <span class="na">data-delay=</span><span class="s">"200"</span><span class="nt">&gt;</span>重点文本，可以设置高的延迟时间。通过设置data-delay="200"来设置打印效果的毫秒数<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
       </section>
       <footer>
         <p><small>Hosted on <a href="http://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
