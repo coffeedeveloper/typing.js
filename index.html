@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Typing.js by coffeedeveloper</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">Typing.js</h1>
+        <p class="header"></p>
+
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/coffeedeveloper/typing.js/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/coffeedeveloper/typing.js/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/coffeedeveloper/typing.js">View On GitHub</a></li>
+        </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/coffeedeveloper">coffeedeveloper</a></p>
+
+
+      </header>
+      <section>
+        <h1>
+<a name="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%8D%8E%E4%B8%BD%E7%9A%84%E6%89%93%E5%AD%97%E6%95%88%E6%9E%9Cjs%E6%8F%92%E4%BB%B6" class="anchor" href="#%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%8D%8E%E4%B8%BD%E7%9A%84%E6%89%93%E5%AD%97%E6%95%88%E6%9E%9Cjs%E6%8F%92%E4%BB%B6"><span class="octicon octicon-link"></span></a>史上最华丽的打字效果JS插件</h1>
+
+<h3>
+<a name="%E5%BD%93%E5%89%8D%E7%89%88%E6%9C%AC09" class="anchor" href="#%E5%BD%93%E5%89%8D%E7%89%88%E6%9C%AC09"><span class="octicon octicon-link"></span></a>当前版本<strong>0.9</strong>
+</h3>
+
+<p>引入相关文件</p>
+
+<div class="highlight highlight-html"><pre>  <span class="c">&lt;!--引入鼠标闪烁效果CSS(可选)--&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"typing.css"</span><span class="nt">&gt;</span>
+  <span class="c">&lt;!--引入typing.js，核心文件--&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"typing.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+
+<p>在页面底部或者<code>Ready</code>事件中执行相关代码</p>
+
+<div class="highlight highlight-html"><pre><span class="nt">&lt;script&gt;</span>
+  <span class="kd">var</span> <span class="nx">typing</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Typing</span><span class="p">({</span>
+    <span class="nx">source</span><span class="o">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'source'</span><span class="p">),</span>
+    <span class="nx">output</span><span class="o">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'output'</span><span class="p">),</span>
+    <span class="nx">delay</span><span class="o">:</span> <span class="mi">80</span>
+  <span class="p">});</span>
+  <span class="nx">typing</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="http://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		
+  </body>
+</html>
