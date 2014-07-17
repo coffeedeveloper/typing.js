@@ -23,3 +23,31 @@
   typing.start();
 </script>
 ```
+
+鼠标闪烁效果，暂时只支持内容都是行内元素的内容
+
+```html
+<div id="source">
+  这里的呈现效果是有鼠标跟随的！<br />
+  还不错吧？
+</div>
+<div id="output-wrap">
+  <span id="output"></span>
+  <span class="typing-cursor">|</span>
+</div>
+```
+
+### todo
+
+- 回退删除效果（1.0版本完成标准）
+- 块状元素的鼠标闪烁输入效果
+
+### 接口说明（尚未实现）
+
+```html
+<div>
+  <span data-type="back">通过设置元素的data-type="back"来达到回退删除的效果</span>
+  <span>上面的文本被删除完毕后才会出现的文本</span>
+  <h1 data-delay="200">重点文本，可以设置高的延迟时间。通过设置data-delay="200"来设置打印效果的毫秒数</h1>
+</div>
+```
