@@ -313,6 +313,20 @@ a.buttons:hover {
 	text-decoration: none;
 }
 
+.btn-wrap a {
+  display: inline-block;
+  color: #fff;
+  font-weight: bold;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+  padding: 10px 12px;
+  margin-right: 24px;
+}
+.btn-wrap a:hover {
+  background-color: #449d44;
+  border-color: #398439;
+  text-decoration: none;
+}
 
 /* Section - for main page content */
 
