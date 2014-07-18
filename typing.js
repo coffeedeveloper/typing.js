@@ -1,5 +1,5 @@
 function Typing (opts) {
-  this.version = '0.9';
+  this.version = '1.0';
   this.source = opts.source;
   this.output = opts.output;
   this.delay = opts.delay || 120;
@@ -35,7 +35,7 @@ Typing.fn = Typing.prototype = {
   },
   print: function (dom, val, callback) {
     setTimeout(function(){
-      dom.innerHTML += val;
+      dom.appendChild(document.createTextNode(val));
       callback();
     }, this.delay);
   },
