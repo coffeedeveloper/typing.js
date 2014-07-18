@@ -36,7 +36,7 @@
   <a href="demo.html">查看完整DEMO</a><a href="demo2.html">查看带闪烁光标DEMO</a>
 </div>
 <h3>
-<a name="%E5%BD%93%E5%89%8D%E7%89%88%E6%9C%AC09" class="anchor" href="#%E5%BD%93%E5%89%8D%E7%89%88%E6%9C%AC09"><span class="octicon octicon-link"></span></a>当前版本<strong>1.0</strong>
+<a name="%E5%BD%93%E5%89%8D%E7%89%88%E6%9C%AC09" class="anchor" href="#%E5%BD%93%E5%89%8D%E7%89%88%E6%9C%AC09"><span class="octicon octicon-link"></span></a>当前版本<strong>1.1</strong>
 </h3>
 
 <p>引入相关文件</p>
@@ -45,6 +45,15 @@
   <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"typing.css"</span><span class="nt">&gt;</span>
   <span class="c">&lt;!--引入typing.js，核心文件--&gt;</span>
   <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"typing.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+
+<p>浏览器说明
+需要在页面上面引用<code>es5-shim</code>库来兼容插件里面用到的<code>forEach</code>数组用法</p>
+
+<div class="highlight highlight-html"><pre><span class="c">&lt;!--[if lt IE 9]&gt;</span>
+<span class="c">  &lt;script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/3.4.0/es5-shim.min.js"&gt;&lt;/script&gt;</span>
+<span class="c">&lt;![endif]--&gt;</span>
+
 </pre></div>
 
 <p>在页面底部或者<code>Ready</code>事件中执行相关代码</p>
@@ -88,6 +97,14 @@
   <span class="nt">&lt;h1</span> <span class="na">data-delay=</span><span class="s">"200"</span><span class="nt">&gt;</span>重点文本，可以设置高的延迟时间。通过设置data-delay="200"来设置打印效果的毫秒数<span class="nt">&lt;/h1&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
 </pre></div>
+<h3>更新记录</h3>
+<ul>
+  <li>1.1
+    <ul>
+      <li>修复IE8会报错的bug(<code>Array.prototype.slice</code>改为用<code>for</code>)</li>
+    </ul>
+  </li>
+</ul>
       </section>
       <footer>
         <p><small>Hosted on <a href="http://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
