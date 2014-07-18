@@ -1,5 +1,5 @@
 function Typing (opts) {
-  this.version = '1.0';
+  this.version = '1.1';
   this.source = opts.source;
   this.output = opts.output;
   this.delay = opts.delay || 120;
@@ -11,12 +11,20 @@ function Typing (opts) {
 }
 
 Typing.fn = Typing.prototype = {
+  toArray: function (eles) {
+    //Array.prototype.slice;
+    var result = [];
+    for (var i = 0; i < eles.length; i++) {
+      result.push(eles[i]);
+    }
+    return result;
+  },
   init: function () {
     this.chain.val = this.convert(this.source, this.chain.val);
   },
   convert: function (dom, arr) {
     var that = this,
-        children = Array.prototype.slice.call(dom.childNodes);
+        children = this.toArray(dom.childNodes);
 
     children.forEach(function (node) {
       if (node.nodeType === 3) {
@@ -57,7 +65,7 @@ Typing.fn = Typing.prototype = {
       });
     } else {
       var dom = document.createElement(curr.dom.nodeName);
-      var attrs = Array.prototype.slice.call(curr.dom.attributes);
+      var attrs = that.toArray(curr.dom.attributes);
       attrs.forEach(function(attr) {
         dom.setAttribute(attr.name, attr.value);
       });

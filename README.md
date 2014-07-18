@@ -1,6 +1,7 @@
 # 史上最华丽的打字效果JS插件
 
-### 当前版本**1.0**
+### 当前版本**1.1**
+
 
 引入相关文件
 
@@ -9,6 +10,16 @@
   <link rel="stylesheet" href="typing.css">
   <!--引入typing.js，核心文件-->
   <script src="typing.js"></script>
+```
+
+浏览器说明
+需要在页面上面引用`es5-shim`库来兼容插件里面用到的`forEach`数组用法
+
+```html
+<!--[if lt IE 9]>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/3.4.0/es5-shim.min.js"></script>
+<![endif]-->
+
 ```
 
 在页面底部或者`Ready`事件中执行相关代码
@@ -55,3 +66,7 @@
   <h1 data-delay="200">重点文本，可以设置高的延迟时间。通过设置data-delay="200"来设置打印效果的毫秒数</h1>
 </div>
 ```
+### 更新记录
+
+- 1.1
+  - 修复IE8会报错的bug(`Array.prototype.slice`改为用`for`)
