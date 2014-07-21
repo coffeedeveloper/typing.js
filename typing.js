@@ -12,10 +12,14 @@ function Typing (opts) {
 
 Typing.fn = Typing.prototype = {
   toArray: function (eles) {
-    //Array.prototype.slice;
-    var result = [];
-    for (var i = 0; i < eles.length; i++) {
-      result.push(eles[i]);
+    var result = null;
+    try {
+      result = Array.prototype.slice.call(eles, 0); // 针对非IE浏览器
+    } catch (e) {
+      result = [];
+      for (var i = 0, len = eles.length; i < len; i++) {
+        result.push(eles[i]);
+      }
     }
     return result;
   },
