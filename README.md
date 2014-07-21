@@ -2,6 +2,8 @@
 
 ### 当前版本**1.1**
 
+[Demo](http://coffeedeveloper.github.io/typing.js/demo.html)
+[Demo2](http://coffeedeveloper.github.io/typing.js/demo2.html)
 
 引入相关文件
 
