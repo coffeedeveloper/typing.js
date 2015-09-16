@@ -1,6 +1,6 @@
 # 史上最华丽的打字效果JS插件
 
-### 当前版本**1.1**
+### 当前版本**1.2**
 
 [Demo](http://coffeedeveloper.github.io/typing.js/demo.html)
 [Demo2](http://coffeedeveloper.github.io/typing.js/demo2.html)
@@ -12,16 +12,6 @@
   <link rel="stylesheet" href="typing.css">
   <!--引入typing.js，核心文件-->
   <script src="typing.js"></script>
-```
-
-浏览器说明
-需要在页面上面引用`es5-shim`库来兼容插件里面用到的`forEach`数组用法
-
-```html
-<!--[if lt IE 9]>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/3.4.0/es5-shim.min.js"></script>
-<![endif]-->
-
 ```
 
 在页面底部或者`Ready`事件中执行相关代码
@@ -70,5 +60,7 @@
 ```
 ### 更新记录
 
+- 1.2
+  - 移除对`es5-shim`的依赖
 - 1.1
   - 修复IE8会报错的bug(`Array.prototype.slice`改为用`for`)

@@ -1,5 +1,5 @@
 function Typing (opts) {
-  this.version = '1.1';
+  this.version = '1.2';
   this.source = opts.source;
   this.output = opts.output;
   this.delay = opts.delay || 120;
@@ -7,12 +7,11 @@ function Typing (opts) {
     parent: null,
     dom: this.output,
     val: []
-  }
+  };
 }
 
 Typing.fn = Typing.prototype = {
   toArray: function (eles) {
-    //Array.prototype.slice;
     var result = [];
     for (var i = 0; i < eles.length; i++) {
       result.push(eles[i]);
@@ -26,7 +25,8 @@ Typing.fn = Typing.prototype = {
     var that = this,
         children = this.toArray(dom.childNodes);
 
-    children.forEach(function (node) {
+    for (var i = 0; i < children.length; i++) {
+      var node = children[i];
       if (node.nodeType === 3) {
         arr = arr.concat(node.nodeValue.split(''));
       } else if (node.nodeType === 1) {
@@ -37,7 +37,7 @@ Typing.fn = Typing.prototype = {
           'val': val
         });
       }
-    });
+    }
 
     return arr;
   },
@@ -66,9 +66,10 @@ Typing.fn = Typing.prototype = {
     } else {
       var dom = document.createElement(curr.dom.nodeName);
       var attrs = that.toArray(curr.dom.attributes);
-      attrs.forEach(function(attr) {
+      for (var i = 0; i < attrs.length; i++) {
+        var attr = attrs[i];
         dom.setAttribute(attr.name, attr.value);
-      });
+      }
       ele.dom.appendChild(dom);
       curr.parent = ele;
       curr.dom = dom;
@@ -79,4 +80,4 @@ Typing.fn = Typing.prototype = {
     this.init();
     this.play(this.chain);
   }
-}
+};
