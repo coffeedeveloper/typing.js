@@ -1,6 +1,6 @@
 # 史上最华丽的打字效果JS插件
 
-### 当前版本**1.2**
+### 当前版本**1.4**
 
 [Demo](http://coffeedeveloper.github.io/typing.js/demo.html)
 [Demo2](http://coffeedeveloper.github.io/typing.js/demo2.html)
@@ -61,6 +61,8 @@
 ```
 ### 更新记录
 
+- 1.4
+  - 增加`UMD`模块加载
 - 1.3
   - 增加打印完成后的回调函数
 - 1.2
