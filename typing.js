@@ -1,5 +1,6 @@
 function Typing (opts) {
-  this.version = '1.2';
+  this.version = '1.3';
+  this.opts = opts || {};
   this.source = opts.source;
   this.output = opts.output;
   this.delay = opts.delay || 120;
@@ -8,6 +9,8 @@ function Typing (opts) {
     dom: this.output,
     val: []
   };
+
+  if (!(typeof this.opts.done == 'function')) this.opts.done = function() {};
 }
 
 Typing.fn = Typing.prototype = {
@@ -18,9 +21,11 @@ Typing.fn = Typing.prototype = {
     }
     return result;
   },
+
   init: function () {
     this.chain.val = this.convert(this.source, this.chain.val);
   },
+
   convert: function (dom, arr) {
     var that = this,
         children = this.toArray(dom.childNodes);
@@ -41,27 +46,28 @@ Typing.fn = Typing.prototype = {
 
     return arr;
   },
+
   print: function (dom, val, callback) {
     setTimeout(function(){
       dom.appendChild(document.createTextNode(val));
       callback();
     }, this.delay);
   },
+
   play: function (ele) {
     if (!ele) return;
-    if (!ele.val.length && ele.parent) this.play(ele.parent);
-    if (!ele.val.length) return;
+    if (!ele.val.length) {
+      if (ele.parent) this.play(ele.parent);
+      else this.opts.done();
+      return;
+    }
 
-    var curr =  ele.val.shift();
+    var curr = ele.val.shift();
     var that = this;
 
     if (typeof curr === 'string') {
       this.print(ele.dom, curr, function() {
-        if (ele.val.length) {
-          that.play(ele);
-        } else if (ele.parent) {
-          that.play(ele.parent);
-        }
+        that.play(ele);
       });
     } else {
       var dom = document.createElement(curr.dom.nodeName);
@@ -76,6 +82,7 @@ Typing.fn = Typing.prototype = {
       this.play(curr.val.length ? curr : curr.parent);
     }
   },
+
   start: function () {
     this.init();
     this.play(this.chain);

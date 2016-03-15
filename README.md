@@ -21,7 +21,8 @@
   var typing = new Typing({
     source: document.getElementById('source'),
     output: document.getElementById('output'),
-    delay: 80
+    delay: 80,
+    done: function() {} //完成打印后的回调事件
   });
   typing.start();
 </script>
@@ -60,6 +61,8 @@
 ```
 ### 更新记录
 
+- 1.3
+  - 增加打印完成后的回调函数
 - 1.2
   - 移除对`es5-shim`的依赖
 - 1.1
