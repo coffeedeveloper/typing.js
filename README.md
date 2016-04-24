@@ -50,7 +50,17 @@
 - 块状元素的鼠标闪烁输入效果
 - 放入`bower`包管理，方便引用
 
-### 接口说明（尚未实现）
+### 接口说明
+
+```js
+var typing = new Typing({
+  source: document.getElementById('source'),
+  output: document.getElementById('output'),
+  delay: 80,
+  done: function() {} //完成打印后的回调事件
+});
+```
+
 
 [`start`](#start)
 
