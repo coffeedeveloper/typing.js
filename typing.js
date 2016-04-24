@@ -19,6 +19,7 @@
       dom: this.output,
       val: []
     };
+    this._stop = true;
 
     if (!(typeof this.opts.done == 'function')) this.opts.done = function() {};
   }
@@ -65,6 +66,7 @@
     },
 
     play: function (ele) {
+      if (this._stop) return;
       if (!ele) return;
       if (!ele.val.length) {
         if (ele.parent) this.play(ele.parent);
@@ -94,7 +96,17 @@
     },
 
     start: function () {
+      this._stop = false;
       this.init();
+      this.play(this.chain);
+    },
+
+    pause: function() {
+      this._stop = true;
+    },
+
+    resume: function(){
+      this._stop = false;
       this.play(this.chain);
     }
   };

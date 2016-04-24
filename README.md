@@ -52,6 +52,35 @@
 
 ### 接口说明（尚未实现）
 
+[`start`](#start)
+
+[`pause`](#pause)
+
+[`resume`]('#resume')
+
+<a name="start" />
+start:开始打印文字
+
+```js
+typing.start();
+```
+
+<a name="pause" />
+pause:暂停打印
+
+```js
+typing.pause();
+```
+
+
+<a name="resume" />
+resume:恢复打印
+
+```js
+typing.resume();
+```
+
+
 ```html
 <div>
   <span data-type="back">通过设置元素的data-type="back"来达到回退删除的效果</span>
