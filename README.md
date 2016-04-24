@@ -16,6 +16,8 @@
 
 在页面底部或者`Ready`事件中执行相关代码
 
+<a name="instance" />
+
 ```html
 <script>
   var typing = new Typing({
@@ -52,21 +54,13 @@
 
 ### 接口说明
 
-```js
-var typing = new Typing({
-  source: document.getElementById('source'),
-  output: document.getElementById('output'),
-  delay: 80,
-  done: function() {} //完成打印后的回调事件
-});
-```
+[实例化typing](#instance)后即可使用下面接口
 
+- [`start`](#start)
 
-[`start`](#start)
+- [`pause`](#pause)
 
-[`pause`](#pause)
-
-[`resume`]('#resume')
+- [`resume`]('#resume')
 
 <a name="start" />
 start:开始打印文字
