@@ -111,7 +111,7 @@
     }
   };
 
-  Typing.version = '1.4';
+  Typing.version = '2.1';
 
   return Typing;
 }));
