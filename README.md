@@ -16,6 +16,8 @@
 
 在页面底部或者`Ready`事件中执行相关代码
 
+<a name="instance" />
+
 ```html
 <script>
   var typing = new Typing({
@@ -50,7 +52,38 @@
 - 块状元素的鼠标闪烁输入效果
 - 放入`bower`包管理，方便引用
 
-### 接口说明（尚未实现）
+### 接口说明
+
+[实例化typing](#instance)后即可使用下面接口
+
+- [`start`](#start)
+
+- [`pause`](#pause)
+
+- [`resume`]('#resume')
+
+<a name="start" />
+start:开始打印文字
+
+```js
+typing.start();
+```
+
+<a name="pause" />
+pause:暂停打印
+
+```js
+typing.pause();
+```
+
+
+<a name="resume" />
+resume:恢复打印
+
+```js
+typing.resume();
+```
+
 
 ```html
 <div>
