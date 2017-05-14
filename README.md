@@ -32,7 +32,7 @@
 
 鼠标闪烁效果，暂时只支持内容都是行内元素的内容
 
-`typing-cursor`和`typing-cursor-black`都是闪烁的黑色光标，而`typing-cursor-white`则是闪烁的黑色光标。
+`typing-cursor`和`typing-cursor-black`都是闪烁的黑色光标，而`typing-cursor-white`则是闪烁的白色光标。
 **请注意要在`span`里面放置内容`|`**
 
 ```html
