@@ -30,6 +30,8 @@
 </script>
 ```
 
+ps: 该typing.js原理为先克隆节点，然后计时打印的。在typing.css注入`#source{display:none;}`，即可去除网页多余的id元素source部分的信息。
+
 鼠标闪烁效果，暂时只支持内容都是行内元素的内容
 
 `typing-cursor`和`typing-cursor-black`都是闪烁的黑色光标，而`typing-cursor-white`则是闪烁的白色光标。
