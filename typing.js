@@ -14,12 +14,14 @@
     this.source = opts.source;
     this.output = opts.output;
     this.delay = opts.delay || 120;
+    this.backspaceDelay = opts.backspaceDelay || this.delay; // Default to same as typing delay
     this.chain = {
       parent: null,
       dom: this.output,
       val: []
     };
     this._stop = true;
+    this._isBackspacing = false; // Flag to track if we're in backspace mode
 
     if (!(typeof this.opts.done == 'function')) this.opts.done = function() {};
   }
@@ -59,10 +61,17 @@
     },
 
     print: function (dom, val, callback) {
+      var currentDelay = this._isBackspacing ? this.backspaceDelay : this.delay;
+      
       setTimeout(function(){
         dom.appendChild(document.createTextNode(val));
         callback();
-      }, this.delay);
+      }, currentDelay);
+    },
+
+    setBackspaceMode: function(isBackspacing) {
+      this._isBackspacing = isBackspacing;
+      return this;
     },
 
     play: function (ele) {

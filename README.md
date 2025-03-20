@@ -1,9 +1,10 @@
 # 史上最华丽的打字效果JS插件
 
-### 当前版本**1.4**
+### 当前版本**2.1**
 
 [Demo](http://coffeedeveloper.github.io/typing.js/demo.html)
 [Demo2](http://coffeedeveloper.github.io/typing.js/demo2.html)
+[Demo3 - 打字和回退速度演示](http://coffeedeveloper.github.io/typing.js/demo3.html)
 
 引入相关文件
 
@@ -23,7 +24,8 @@
   var typing = new Typing({
     source: document.getElementById('source'),
     output: document.getElementById('output'),
-    delay: 80,
+    delay: 80, // 打字速度，单位：毫秒
+    backspaceDelay: 40, // 回退速度，单位：毫秒，不设置则与打字速度相同
     done: function() {} //完成打印后的回调事件
   });
   typing.start();
@@ -48,7 +50,6 @@
 
 ### todo
 
-- 回退删除效果
 - 块状元素的鼠标闪烁输入效果
 - 放入`bower`包管理，方便引用
 
@@ -60,7 +61,9 @@
 
 - [`pause`](#pause)
 
-- [`resume`]('#resume')
+- [`resume`](#resume)
+
+- [`setBackspaceMode`](#setBackspaceMode)
 
 <a name="start" />
 start:开始打印文字
@@ -84,6 +87,14 @@ resume:恢复打印
 typing.resume();
 ```
 
+<a name="setBackspaceMode" />
+setBackspaceMode:切换打字和回退模式
+
+```js
+typing.setBackspaceMode(true); // 开启回退模式
+typing.setBackspaceMode(false); // 关闭回退模式
+```
+
 
 ```html
 <div>
@@ -94,6 +105,9 @@ typing.resume();
 ```
 ### 更新记录
 
+- 2.1
+  - 增加`backspaceDelay`参数，可以单独设置回退速度
+  - 增加`setBackspaceMode`方法，用于切换打字和回退模式
 - 1.4
   - 增加`UMD`模块加载
 - 1.3
