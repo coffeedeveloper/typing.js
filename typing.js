@@ -22,6 +22,8 @@
     this._stop = true;
 
     if (!(typeof this.opts.done == 'function')) this.opts.done = function() {};
+    // Add support for onComplete callback
+    if (!(typeof this.opts.onComplete == 'function')) this.opts.onComplete = function() {};
   }
 
   Typing.fn = Typing.prototype = {
@@ -70,7 +72,10 @@
       if (!ele) return;
       if (!ele.val.length) {
         if (ele.parent) this.play(ele.parent);
-        else this.opts.done();
+        else {
+          this.opts.done();
+          this.opts.onComplete(this); // Call the onComplete callback with the typing instance
+        }
         return;
       }
 
