@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>typing.js onComplete callback demo</title>
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet" href="bootstrap-theme.min.css">
+  <link rel="stylesheet" href="../typing.css">
+  <link rel="stylesheet" href="demo.css">
+  <script src="../typing.js"></script>
+  <style>
+    .completion-message {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 5px;
+      background-color: #dff0d8;
+      border: 1px solid #d6e9c6;
+      color: #3c763d;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-6">
+        <div id="source">
+          <h1>onComplete Callback Demo</h1>
+          <p>This demo shows how to use the onComplete callback function that is called when typing is completed.</p>
+          <p>The onComplete callback receives the typing instance as an argument, allowing you to access all properties and methods of the typing instance.</p>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div id="output-wrap">
+          <div id="output"></div>
+          <span class="typing-cursor">|</span>
+        </div>
+        <div id="completion-message" class="completion-message">
+          Typing completed! You can now perform additional actions.
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+    var typing = new Typing({
+      source: document.getElementById('source'),
+      output: document.getElementById('output'),
+      delay: 80,
+      // The traditional done callback (no arguments)
+      done: function() {
+        console.log('Typing completed (done callback)');
+      },
+      // The new onComplete callback (receives typing instance)
+      onComplete: function(instance) {
+        console.log('Typing completed (onComplete callback)');
+        console.log('Typing instance:', instance);
+        
+        // Show completion message
+        document.getElementById('completion-message').style.display = 'block';
+        
+        // You can access all properties and methods of the typing instance
+        // For example, you could pause and resume typing
+        // instance.pause();
+        // setTimeout(function() {
+        //   instance.resume();
+        // }, 2000);
+      }
+    });
+    typing.start();
+  </script>
+</body>
+</html>

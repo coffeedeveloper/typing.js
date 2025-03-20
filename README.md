@@ -1,9 +1,10 @@
 # 史上最华丽的打字效果JS插件
 
-### 当前版本**1.4**
+### 当前版本**2.1**
 
 [Demo](http://coffeedeveloper.github.io/typing.js/demo.html)
 [Demo2](http://coffeedeveloper.github.io/typing.js/demo2.html)
+[Demo3 - onComplete Callback](http://coffeedeveloper.github.io/typing.js/demo3.html)
 
 引入相关文件
 
@@ -24,7 +25,8 @@
     source: document.getElementById('source'),
     output: document.getElementById('output'),
     delay: 80,
-    done: function() {} //完成打印后的回调事件
+    done: function() {}, //完成打印后的回调事件（无参数）
+    onComplete: function(instance) {} //完成打印后的回调事件（带有typing实例参数）
   });
   typing.start();
 </script>
@@ -94,6 +96,8 @@ typing.resume();
 ```
 ### 更新记录
 
+- 2.1
+  - 增加`onComplete`回调函数，该回调函数会在打印完成后被调用，并且会接收typing实例作为参数
 - 1.4
   - 增加`UMD`模块加载
 - 1.3
