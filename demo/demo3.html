@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>typing.js backspace demo</title>
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet" href="bootstrap-theme.min.css">
+  <link rel="stylesheet" href="../typing.css">
+  <link rel="stylesheet" href="demo.css">
+  <script src="../typing.js"></script>
+  <style>
+    .controls {
+      margin: 20px 0;
+    }
+    .controls button {
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12">
+        <h1>打字速度和回退速度演示</h1>
+        <p>本演示展示了如何调节打字速度和回退速度</p>
+        
+        <div class="controls">
+          <button id="startTyping" class="btn btn-primary">开始打字</button>
+          <button id="startBackspace" class="btn btn-danger">开始回退</button>
+          <button id="reset" class="btn btn-default">重置</button>
+        </div>
+        
+        <div id="source" style="display: none;">
+          这是一段用于演示打字速度和回退速度的文本。您可以通过设置delay和backspaceDelay参数来调整打字和回退的速度。
+        </div>
+        
+        <div id="output-wrap">
+          <span id="output"></span>
+          <span class="typing-cursor">|</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script type="text/javascript">
+    // 初始化typing对象，设置不同的打字速度和回退速度
+    var typing = new Typing({
+      source: document.getElementById('source'),
+      output: document.getElementById('output'),
+      delay: 100,        // 打字速度：100毫秒
+      backspaceDelay: 50, // 回退速度：50毫秒（比打字速度快）
+      done: function() {
+        console.log('打字完成');
+      }
+    });
+    
+    // 获取按钮元素
+    var startTypingBtn = document.getElementById('startTyping');
+    var startBackspaceBtn = document.getElementById('startBackspace');
+    var resetBtn = document.getElementById('reset');
+    
+    // 开始打字
+    startTypingBtn.addEventListener('click', function() {
+      typing.setBackspaceMode(false); // 设置为正常打字模式
+      typing.start();
+    });
+    
+    // 开始回退
+    startBackspaceBtn.addEventListener('click', function() {
+      typing.setBackspaceMode(true); // 设置为回退模式
+      
+      // 获取当前输出的文本
+      var outputText = document.getElementById('output').textContent;
+      
+      // 清空输出
+      document.getElementById('output').textContent = '';
+      
+      // 创建一个临时的source元素
+      var tempSource = document.createElement('div');
+      tempSource.textContent = outputText;
+      
+      // 更新typing对象的source
+      typing.source = tempSource;
+      
+      // 开始打字（实际上是回退，因为我们设置了回退模式）
+      typing.start();
+    });
+    
+    // 重置
+    resetBtn.addEventListener('click', function() {
+      document.getElementById('output').textContent = '';
+      typing.source = document.getElementById('source');
+      typing._stop = true;
+    });
+  </script>
+</body>
+</html>
